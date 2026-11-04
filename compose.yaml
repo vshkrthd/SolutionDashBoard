@@ -1,0 +1,10 @@
+services:
+  monitoring:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      SPLUNK_URL: ${SPLUNK_URL:-}
+      SPLUNK_TOKEN: ${SPLUNK_TOKEN:-}
+      SPLUNK_SEARCH: ${SPLUNK_SEARCH:-}
+    restart: unless-stopped
